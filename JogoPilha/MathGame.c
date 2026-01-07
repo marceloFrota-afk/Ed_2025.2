@@ -11,7 +11,7 @@ int main() {
     int escolha;
 
     do {
-        printf("---MATH GAME---\n");
+        printf("MATH GAME\n");
         printf("1 - Iniciar jogo\n");
         printf("2 - Instrucoes\n");
         printf("0 - Sair\n");
@@ -33,8 +33,7 @@ int main() {
         }
 
         if (escolha == 2) {
-
-            printf("Bem vindo ao Math Game! O jogo funciona da seguinte forma:\n Voce tera 15 questoes de matematica, que devem ser resolvidas. Leia as contas igual como as programamos em nossos trabalhos, resolva cada uma delas assumindo o papel da maquina! Cada acerto adiciona 1 ponto, e cada erro retira 1 ponto.\nAcumulando 5 pontos voce vence. Caso contrario, its over :D\n\n");
+            printf("\nBem vindo ao Math Game! O jogo funciona da seguinte forma:\nVoce tera 15 questoes de matematica, que devem ser resolvidas. Leia as contas igual como as programamos em nossos trabalhos, resolva cada uma delas assumindo o papel da maquina! Cada acerto adiciona 1 ponto, e cada erro retira 1 ponto.\nAcumulando 5 pontos voce vence. Caso contrario, its over :D\n\n");
             continue;
         }
 
@@ -61,19 +60,18 @@ int main() {
             };
 
             int respostasCorretas[MAX_PERGUNTAS] = {
-            5, 21, 10, 14, 22, 6, 14, 16, 12, 0, 8, 4, 13, 8, 4
+                5, 21, 10, 14, 22, 6, 14, 16, 12, 0, 8, 4, 13, 8, 4
             };
 
             int respostaUsuario;
 
             printf("\nMATH GAME!!!!\n");
-            printf("Objetivo: acumule 5 pontos e torne-se um so com o computador!\n\n");
+            printf("Objetivo: acumule 5 pontos e torne-se um so com o computador!\n\n\n\n");
 
             for (int i = 0; i < MAX_PERGUNTAS; i++) {
 
                 printf("Pergunta %d: quanto e %s ? ", i + 1, perguntas[i]);
 
-                /* LEITURA SEGURA */
                 while (1) {
                     fgets(entrada, sizeof(entrada), stdin);
                     if (sscanf(entrada, "%d", &respostaUsuario) == 1) {
@@ -84,30 +82,39 @@ int main() {
                 }
 
                 if (respostaUsuario == respostasCorretas[i]) {
-                    /* EMPILHAMENTO */
                     if (topo < OBJETIVO - 1) {
                         topo++;
-                        pilha[topo] = 1;
+                        pilha[topo] = i + 1;
                     }
                     printf("Acertou!! Ponto empilhado :)\n");
                 } else {
-                    /* DESEMPILHAMENTO */
                     if (topo >= 0) {
                         topo--;
                     }
                     printf("Errou, meu filho :( Ponto removido (se havia algum)\n");
                 }
 
-                printf("Pontuacao atual: %d\n\n", topo + 1);
+                printf("Pontuacao atual: %d\n", topo + 1);
+
+                /* ===== MOSTRA A PILHA (TOPO -> BASE) ===== */
+                printf("Pilha de pontos (topo -> base): ");
+                if (topo == -1) {
+                    printf("[vazia]");
+                } else {
+                    for (int j = topo; j >= 0; j--) {
+                        printf("[P%d]", pilha[j]);
+                    }
+                }
+                printf("\n\n");
 
                 if (topo + 1 == OBJETIVO) {
-                    printf("AEEEEEE :D VOCE VENCEU! Alcancou os 5 pontos!!\n");
+                    printf("AEEEEEE :D VOCE VENCEU! Alcancou os 5 pontos!!\nReiniciando o jogo...\n\n");
                     break;
                 }
             }
 
             if (topo + 1 < OBJETIVO) {
-                printf("Deu ruim meu nobre :( Voce nao alcancou os 5 pontos\nTente novamente!\n\n");
+                printf("Deu ruim meu nobre :( Voce nao alcancou os 5 pontos\n");
             }
         }
 
