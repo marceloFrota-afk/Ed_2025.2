@@ -43,4 +43,4 @@ Conclusão
 
 Este trabalho demonstra a aplicação prática das estruturas de dados Pilha e Fila por meio de jogos interativos, facilitando a compreensão de seu funcionamento interno. A implementação permite visualizar claramente as operações realizadas em cada estrutura, reforçando os conceitos fundamentais estudados na disciplina de Estrutura de Dados.
 
-Integrantes: Pedro Henrique Monteiro de Vasconcelos
+Integrantes: Francisco Natan Araújo Queiroz, Marcelo Flávio de Carvalho Frota Porto, Pedro Henrique Monteiro de Vasconcelos.
