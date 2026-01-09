@@ -1,46 +1,108 @@
-Este trabalho consiste no desenvolvimento de dois jogos na linguagem C como atividade avaliativa da disciplina de Estrutura de Dados. O principal objetivo é aplicar os conceitos estudados em sala sobre as estruturas de dados Pilha e Fila, demonstrando seu funcionamento por meio de jogos interativos executados no terminal.
 
-Cada jogo foi projetado para evidenciar as operações básicas das estruturas utilizadas, como inserção, remoção, controle de limites e organização dos dados.
+# Estruturas de Dados em C - Jogos Pilha/Fila
 
-//
-Estruturas de Dados Utilizadas
+**Este projeto foi desenvolvido para fins acadêmicos**, como parte da disciplina de **Estruturas de Dados**.  
+Ele contém dois jogos interativos em terminal, implementados em linguagem C, com o objetivo de demonstrar na prática o funcionamento de estruturas de dados fundamentais:
 
-Foram utilizadas duas estruturas de dados fundamentais:
+- **Pilha (Stack)**
+- **Fila com Prioridade (Priority Queue)**
 
-Pilha (LIFO – Last In, First Out), aplicada no jogo Math Game, onde os pontos do jogador são empilhados e desempilhados conforme seu desempenho.
 
-Fila com Prioridade, aplicada no jogo Bankers Game, simulando um sistema de atendimento bancário em que clientes com maior prioridade são atendidos primeiro.
+## Visão Geral
 
-//
-Funcionamento dos jogos
-Jogo 1 – Math Game (Pilha)
+O **projeto** consiste em **dois jogos em modo texto**, cada um projetado para explorar uma estrutura de dados específica de forma prática e interativa:
 
-O Math Game é um jogo de perguntas matemáticas cujo objetivo é alcançar cinco pontos antes do término das quinze perguntas disponíveis. Cada pergunta respondida corretamente adiciona um ponto, enquanto cada erro remove um ponto, caso exista algum ponto acumulado. A pontuação do jogador é representada por uma pilha implementada por meio de um vetor de tamanho fixo. O controle da pilha é feito pela variável topo, que indica o elemento no topo da estrutura. Sempre que o jogador acerta uma pergunta, um novo elemento é empilhado, representando um ponto. Em caso de erro, ocorre o desempilhamento de um ponto, respeitando os limites da pilha. Após cada pergunta, o estado atual da pilha é exibido, mostrando os pontos do topo até a base. O jogador vence ao atingir cinco pontos acumulados na pilha. Caso não alcance esse valor após responder todas as perguntas, o jogo é encerrado com derrota.
+1. **Math Game** — Utiliza uma **Pilha (LIFO)** para controle de pontuação.
+2. **Bankers Game** — Simula o atendimento de clientes usando uma **Fila com Prioridade**.
 
-Jogo 2 – Bankers Game (Fila com Prioridade)
+Ambos os jogos permitem observar claramente operações como inserção, remoção, consulta e organização interna dos dados, reforçando conceitos teóricos por meio da prática.
 
-O Bankers Game simula um sistema de atendimento bancário utilizando uma fila com prioridade. Cada cliente que entra na fila recebe uma senha sequencial e informa um nível de prioridade, variando de um a cinco, sendo um o mais urgente. A fila é implementada utilizando um vetor de estruturas do tipo Cliente, que armazenam a senha e a prioridade. O atendimento não segue apenas a ordem de chegada, mas sim a prioridade, garantindo que clientes mais urgentes sejam atendidos primeiro. Quando um cliente é atendido, ele é removido da fila e os demais elementos são reorganizados. O sistema também permite visualizar o próximo cliente a ser atendido e listar todos os clientes presentes na fila ordenados por prioridade. O jogo possui controle de fila cheia e fila vazia, evitando operações inválidas.
+---
 
-//
-Funcionalidades Implementadas
+##  Fundamentação Técnica
 
-No Math Game:
-Menu interativo com opções de iniciar o jogo, visualizar instruções e sair.
-Validação das entradas do usuário.
-Sistema de pontuação baseado em pilha.
-Exibição da pilha após cada rodada.
-Condições claras de vitória e derrota.
+### Pilha (Stack — LIFO)
 
-No Bankers Game:
-Inserção de clientes na fila.
-Atendimento do cliente com maior prioridade.
-Exibição do próximo cliente a ser atendido.
-Listagem de todos os clientes ordenados por prioridade.
-Controle de erros como fila cheia ou vazia.
+- Estrutura do tipo **Last In, First Out**.
+- O último elemento inserido é o primeiro a ser removido.
+- Implementada no **Math Game** para controlar a pontuação do jogador.
+- Cada resposta correta empilha um ponto; respostas incorretas desempilham.
 
-//
-Conclusão
+**Principais operações:**
+- `push` — Inserção
+- `pop` — Remoção
+- `top` — Consulta do elemento no topo
 
-Este trabalho demonstra a aplicação prática das estruturas de dados Pilha e Fila por meio de jogos interativos, facilitando a compreensão de seu funcionamento interno. A implementação permite visualizar claramente as operações realizadas em cada estrutura, reforçando os conceitos fundamentais estudados na disciplina de Estrutura de Dados.
+---
 
-Integrantes: Francisco Natan Araújo Queiroz, Marcelo Flávio de Carvalho Frota Porto, Pedro Henrique Monteiro de Vasconcelos.
+### Fila com Prioridade (Priority Queue)
+
+- Estrutura onde cada elemento possui um **nível de prioridade**.
+- O elemento com maior prioridade é atendido primeiro, independentemente da ordem de chegada.
+- Implementada no **Bankers Game**, simulando o atendimento bancário.
+
+Cada cliente possui:
+- Nome
+- Prioridade (1 a 5)
+
+Clientes com prioridade mais alta são processados antes dos demais.
+
+---
+
+## Jogos Implementados
+
+### Math Game — Pilha
+
+**Descrição:**
+- O jogador responde perguntas matemáticas.
+- Cada acerto adiciona um ponto à pilha.
+- Erros removem pontos.
+- O jogo termina ao atingir a pontuação final ou ao exceder o número de tentativas.
+
+**Objetivo educacional:**
+- Demonstrar claramente o comportamento LIFO da pilha.
+
+---
+
+### Bankers Game — Fila com Prioridade
+
+**Descrição:**
+- Simula um sistema de atendimento bancário.
+- Clientes são adicionados com diferentes níveis de prioridade.
+- O atendimento ocorre sempre pelo cliente de maior prioridade disponível.
+
+**Objetivo educacional:**
+- Mostrar como filas com prioridade diferem das filas tradicionais (FIFO).
+
+---
+
+## Funcionalidades
+
+-  Implementação completa em **C**
+-  Jogos interativos em terminal
+-  Uso prático de estruturas de dados
+-  Código organizado e didático
+-  Ideal para estudo e avaliação acadêmica
+
+---
+
+##  Compilação
+
+O projeto utiliza apenas bibliotecas padrão da linguagem C.
+
+### Compilar com GCC:
+
+```bash
+gcc main.c -o ed_2025_2
+```
+---
+
+## Créditos
+
+Projeto desenvolvido por:
+
+- **Francisco Natan Araújo Queiroz**
+- **Marcelo Flávio de Carvalho Frota Porto**
+- **Pedro Henrique Monteiro de Vasconcelos**
+
+No contexto da disciplina **Estrutura de Dados — 2025.2**.
