@@ -2,7 +2,7 @@
 #include <math.h>
 #include <string.h>
 
-#define MAX_PERGUNTAS 15, 
+#define MAX_PERGUNTAS 15
 #define OBJETIVO 5
 
 int main() {
