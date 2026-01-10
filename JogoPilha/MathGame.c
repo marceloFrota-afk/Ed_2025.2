@@ -2,7 +2,7 @@
 #include <math.h>
 #include <string.h>
 
-#define MAX_PERGUNTAS 15
+#define MAX_PERGUNTAS 15, 
 #define OBJETIVO 5
 
 int main() {
@@ -33,7 +33,7 @@ int main() {
         }
 
         if (escolha == 2) {
-            printf("\nBem vindo ao Math Game! O jogo funciona da seguinte forma:\nVoce tera 15 questoes de matematica, que devem ser resolvidas. Leia as contas igual como as programamos em nossos trabalhos, resolva cada uma delas assumindo o papel da maquina! Cada acerto adiciona 1 ponto, e cada erro retira 1 ponto.\nAcumulando 5 pontos voce vence. Caso contrario, its over :D\n\n");
+            printf("\nBem vindo ao Math Game. O jogo funciona da seguinte forma:\nVoce tera 15 questoes de matematica, que devem ser resolvidas. Leia as contas igual como as programamos em nossos trabalhos, resolva cada uma delas assumindo o papel da maquina! Cada acerto adiciona 1 ponto, e cada erro retira 1 ponto.\nAcumulando 5 pontos voce vence. Caso contrario, its over :D\n\n");
             continue;
         }
 
@@ -66,7 +66,7 @@ int main() {
             int respostaUsuario;
 
             printf("\nMATH GAME!!!!\n");
-            printf("Objetivo: acumule 5 pontos e torne-se um so com o computador!\n\n\n\n");
+            printf("Objetivo: acumule 5 pontos e torne-se um so com o computador\n\n\n\n");
 
             for (int i = 0; i < MAX_PERGUNTAS; i++) {
 
@@ -91,21 +91,19 @@ int main() {
                     if (topo >= 0) {
                         topo--;
                     }
-                    printf("Errou, meu filho :( Ponto removido (se havia algum)\n");
+                    printf("Errou meu filho :( Ponto removido (se havia algum)\n");
                 }
 
                 printf("Pontuacao atual: %d\n", topo + 1);
-
-                /* ===== MOSTRA A PILHA (TOPO -> BASE) ===== */
+  
                 printf("Pilha de pontos (topo -> base): ");
                 if (topo == -1) {
                     printf("[vazia]");
                 } else {
                     for (int j = topo; j >= 0; j--) {
-                        printf("[P%d]", pilha[j]);
+                        printf("[P%d]\n\n", pilha[j]);
                     }
                 }
-                printf("\n\n");
 
                 if (topo + 1 == OBJETIVO) {
                     printf("AEEEEEE :D VOCE VENCEU! Alcancou os 5 pontos!!\nReiniciando o jogo...\n\n");

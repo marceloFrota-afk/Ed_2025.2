@@ -3,17 +3,14 @@
 #define TAM 10
 
 typedef struct {
-    int senha;
-    int prioridade;
+    int senha, prioridade;
 } Cliente;
 
 int main() {
     Cliente fila[TAM];
-    int inicio = 0;
-    int fim = 0;
-    int opcao;
-    int proximaSenha = 1;
- printf("\nBANKERS GAME!!!!\n");
+    int inicio = 0, fim = 0, opcao, proximaSenha = 1;
+    printf("\nBANKERS GAME!!!!\n");
+
     do {
         printf("\n1 - Entrar cliente\n");
         printf("2 - Atender cliente\n");
@@ -25,27 +22,25 @@ int main() {
 
         if (opcao == 1) {
             if (fim == TAM) {
-                printf("Fila cheia!\n");
+                printf("Fila cheia\n");
             } else {
                 int prioridade;
                 printf("Informe a prioridade (1 a 5, onde 1 e o mais urgente): ");
                 scanf("%d", &prioridade);
 
                 if (prioridade < 1 || prioridade > 5) {
-                    printf("Valor invalido, siga as regras! :|\n");
+                    printf("Valor invalido :|\n");
                 } else {
                     fila[fim].senha = proximaSenha;
                     fila[fim].prioridade = prioridade;
 
-                    printf("Cliente entrou! :D\n",
+                    printf("Cliente entrou@! :D\n",
                            proximaSenha, prioridade);
                     fim++;
                     proximaSenha++;
                 }
             }
-        }
-
-        else if (opcao == 2) {
+        }else if (opcao == 2) {
             if (inicio == fim) {
                 printf("Tem ninguem nao ( ' ')\n");
             } else {
@@ -65,9 +60,7 @@ int main() {
 
                 fim--;
             }
-        }
-
-        else if (opcao == 3) {
+        }else if (opcao == 3) {
             if (inicio == fim) {
                 printf("Nao tem ninguem :P\n");
             } else {
